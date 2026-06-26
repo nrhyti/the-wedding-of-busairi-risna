@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Wedding of Muhammad Busairi & Risna Karima</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER / LANDING
+══════════════════════════════════════════ -->
+<section id="cover">
+  <!-- Floral corner decorations -->
+  <div class="floral floral-tl"></div>
+  <div class="floral floral-tr"></div>
+  <div class="floral floral-bl"></div>
+  <div class="floral floral-br"></div>
+
+  <div class="cover-box">
+    <!-- Couple photo -->
+    <div class="cover-photo">
+      <!--
+        FOTO YANG PERLU DISIAPKAN:
+        assets/img/cover-couple.jpg
+        → Foto berdua formal (background putih/cream/arch)
+        → Ukuran minimal: 600x600px
+      -->
+      <img src="assets/img/cover-couple.png" alt="Risna & Busairi"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="photo-placeholder"><i class="fas fa-heart"></i></div>
+    </div>
+
+    <p class="cover-small-text">THE WEDDING OF</p>
+
+    <h1 class="cover-name">Muhammad Busairi</h1>
+    <span class="cover-amp">&amp;</span>
+    <h1 class="cover-name">Risna Karima</h1>
+
+    <div class="cover-ornament">
+      <span class="line"></span>
+      <span class="diamond">◆</span>
+      <span class="line"></span>
+    </div>
+
+    <p class="cover-date">24 dan 26 JULI 2026</p>
+
+    <!-- Guest box -->
+    <div class="guest-box">
+      <p class="guest-label">Kepada Yth.</p>
+      <p class="guest-name">Tamu Undangan</p>
+    </div>
+
+    <button class="btn-buka" id="btnBuka">
+      <i class="fas fa-envelope-open-text"></i>&nbsp; Buka Undangan
+    </button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     INVITATION CONTENT
+══════════════════════════════════════════ -->
+<main id="main-content" class="hidden">
+
+  <!-- ── 1. AYAT / QUOTE ── -->
+  <section id="ayat" class="section section-bg-marble">
+    <div class="floral floral-tl sm"></div>
+    <div class="floral floral-tr sm"></div>
+    <div class="container">
+      <p class="salam" data-aos="fade-up">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      <div class="gold-divider" data-aos="fade-up" data-aos-delay="50"></div>
+      <p class="arabic" data-aos="fade-up" data-aos-delay="100">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </p>
+      <p class="translation" data-aos="fade-up" data-aos-delay="150">
+        Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan hidup untukmu dari jenismu sendiri agar kamu merasa tenteram kepadanya dan dijadikan-Nya di antaramu rasa kasih dan sayang.
+      </p>
+      <p class="source" data-aos="fade-up" data-aos-delay="200">(QS. Ar-Rum : 21)</p>
+    </div>
+  </section>
+
+  <!-- ── 2. MEMPELAI ── -->
+  <section id="mempelai" class="section section-cream">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Mempelai</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+
+      <div class="couple-wrap">
+        <!-- Mempelai Wanita -->
+        <div class="couple-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="couple-frame">
+            <!--
+              FOTO YANG PERLU DISIAPKAN:
+              assets/img/bride.jpg
+              → Foto mempelai wanita (oval/bulat, formal, background cream/putih)
+              → Ukuran minimal: 400x400px
+            -->
+            <img src="assets/img/bride.png" alt="Risna Karima"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+            <div class="photo-placeholder"><i class="fas fa-female"></i></div>
+            <div class="frame-laurel frame-laurel-l"></div>
+            <div class="frame-laurel frame-laurel-r"></div>
+          </div>
+          <h3 class="couple-name">Risna Karima</h3>
+          <p class="couple-desc">
+            Putri Pertama dari<br/>
+            Bapak H. Aslani<br/>
+            &amp;<br/>
+            Ibu Hj. Mutmainah
+          </p>
+        </div>
+
+        <!-- Center heart -->
+        <div class="couple-center" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-heart heart-icon"></i>
+        </div>
+
+        <!-- Mempelai Pria -->
+        <div class="couple-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="couple-frame">
+            <!--
+              FOTO YANG PERLU DISIAPKAN:
+              assets/img/groom.jpg
+              → Foto mempelai pria (oval/bulat, formal, background cream/putih)
+              → Ukuran minimal: 400x400px
+            -->
+            <img src="assets/img/groom.png" alt="Muhammad Busairi"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+            <div class="photo-placeholder"><i class="fas fa-male"></i></div>
+            <div class="frame-laurel frame-laurel-l"></div>
+            <div class="frame-laurel frame-laurel-r"></div>
+          </div>
+          <h3 class="couple-name">Muhammad Busairi</h3>
+          <p class="couple-desc">
+            Putra Pertama dari<br/>
+            Bapak Syamsuni<br/>
+            &amp;<br/>
+            Ibu Arpiah
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. COUNTDOWN ── -->
+  <section id="countdown" class="section section-ivory">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Menuju Hari Bahagia</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="countdown-grid" data-aos="zoom-in" data-aos-delay="100">
+        <div class="cd-box">
+          <span class="cd-num" id="cd-days">00</span>
+          <span class="cd-label">Hari</span>
+        </div>
+        <div class="cd-box">
+          <span class="cd-num" id="cd-hours">00</span>
+          <span class="cd-label">Jam</span>
+        </div>
+        <div class="cd-box">
+          <span class="cd-num" id="cd-minutes">00</span>
+          <span class="cd-label">Menit</span>
+        </div>
+        <div class="cd-box">
+          <span class="cd-num" id="cd-seconds">00</span>
+          <span class="cd-label">Detik</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. ACARA PERNIKAHAN ── -->
+  <section id="acara" class="section section-cream">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Acara Pernikahan</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="acara-grid">
+        <div class="acara-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="acara-icon-wrap"><i class="fas fa-mosque"></i></div>
+          <h3 class="acara-title">Akad Nikah</h3>
+          <div class="acara-divider"></div>
+          <p class="acara-day">Jumat</p>
+          <p class="acara-date">24 Juli 2026</p>
+          <p class="acara-time">08.00 WITA</p>
+          <p class="acara-place">Rumah Mempelai Wanita</p>
+        </div>
+        <div class="acara-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="acara-icon-wrap"><i class="fas fa-champagne-glasses"></i></div>
+          <h3 class="acara-title">Resepsi</h3>
+          <div class="acara-divider"></div>
+          <p class="acara-day">Minggu</p>
+          <p class="acara-date">26 Juli 2026</p>
+          <p class="acara-time">09.00 WITA</p>
+          <p class="acara-place">Jl. Negara Kandangan<br/>Desa Muning Tengah<br/>RT.03 No.4</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. LOKASI ── -->
+  <section id="lokasi" class="section section-ivory">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Lokasi Acara</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="lokasi-box" data-aos="fade-up" data-aos-delay="100">
+        <p class="lokasi-name">Rumah Mempelai Wanita</p>
+        <p class="lokasi-addr">Jl. Negara Kandangan Desa Muning Tengah RT.03 No.4</p>
+        <!-- Ganti URL href sesuai lokasi sebenarnya -->
+        <a href="https://maps.google.com/?q=Muning+Tengah+Kandangan" target="_blank" class="btn-maps">
+          <i class="fas fa-location-dot"></i> Buka Maps
+        </a>
+        <!-- Ganti src embed map sesuai lokasi sebenarnya -->
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!4v1782462729589!6m8!1m7!1sXAA_HGI04D7HJwJyLfbhNA!2m2!1d-2.645766443574672!2d115.1242394691616!3f191.36415446319143!4f4.29622482512525!5f0.7820865974627469" 
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. GALERI ── -->
+  <section id="galeri" class="section section-cream">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Galeri</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <!--
+        FOTO YANG PERLU DISIAPKAN (4 foto):
+        assets/img/gallery-1.jpg  → foto 1 (landscape/portrait bebas, ukuran min 600px)
+        assets/img/gallery-2.jpg  → foto 2
+        assets/img/gallery-3.jpg  → foto 3
+        assets/img/gallery-4.jpg  → foto 4
+      -->
+      <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="gal-item gal-big">
+          <img src="assets/img/gallery1.jpg" alt="Foto 1"
+               onerror="this.parentElement.classList.add('no-img'); this.remove()"/>
+          <div class="gal-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gal-item">
+          <img src="assets/img/gallery2.jpg" alt="Foto 2"
+               onerror="this.parentElement.classList.add('no-img'); this.remove()"/>
+          <div class="gal-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gal-item">
+          <img src="assets/img/gallery3.jpg" alt="Foto 3"
+               onerror="this.parentElement.classList.add('no-img'); this.remove()"/>
+          <div class="gal-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gal-item">
+          <img src="assets/img/gallery4.jpg" alt="Foto 4"
+               onerror="this.parentElement.classList.add('no-img'); this.remove()"/>
+          <div class="gal-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. HUBUNGI KAMI ── -->
+  <section id="contact" class="section section-ivory">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Hubungi Kami</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="contact-row" data-aos="fade-up" data-aos-delay="100">
+        <!-- Ganti username IG sesuai -->
+        <a href="https://instagram.com/_xy.naa" target="_blank" class="contact-btn ig">
+          <i class="fab fa-instagram"></i>
+          <span>@_xy.naa</span>
+        </a>
+        <a href="https://instagram.com/busairi_busai" target="_blank" class="contact-btn ig">
+          <i class="fab fa-instagram"></i>
+          <span>@busairi_busai</span>
+        </a>
+        <!-- Ganti nomor WA (format: 628xxx) -->
+        <a href="https://wa.me/6285753707198?text=Bismillah,%20saya%20akan%20hadir%20di%20pernikahan%20Risna%20%26%20Busairi%20InsyaAllah" target="_blank" class="contact-btn wa">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. WEDDING GIFT ── -->
+  <section id="gift" class="section section-cream">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Wedding Gift</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="gift-box" data-aos="fade-up" data-aos-delay="100">
+        <div class="gift-icon"><i class="fas fa-gift"></i></div>
+        <p class="gift-note">Informasi rekening</p>
+        <!-- Aktifkan dan isi rekening kalau sudah ada -->
+        
+        <div class="rek-item">
+          <div class="rek-left">
+            <span class="rek-bank">Bank BRI</span>
+            <span class="rek-num">4516-01-044047-53-6</span>
+            <span class="rek-name">a.n. Mutmainah</span>
+          </div>
+          <button class="btn-salin" onclick="salin('1234567890123456', this)">
+            <i class="fas fa-copy"></i> Salin
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. UCAPAN & DOA ── -->
+  <section id="ucapan" class="section section-ivory">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="ornament-icon">✦</span>
+        <h2 class="section-title">Ucapan &amp; Doa</h2>
+        <span class="ornament-icon">✦</span>
+      </div>
+      <div class="ucapan-form" data-aos="fade-up" data-aos-delay="100">
+        <input type="text" class="form-input" id="inp-nama" placeholder="Nama"/>
+        <textarea class="form-input" id="inp-pesan" rows="3" placeholder="Ucapan dan doa"></textarea>
+        <button class="btn-kirim" onclick="kirimUcapan()">
+          <i class="fas fa-paper-plane"></i> Kirim Ucapan
+        </button>
+      </div>
+      <div class="ucapan-list" id="ucapan-list">
+        <div class="ucapan-item" data-aos="fade-up">
+          <span class="ucapan-user"><i class="fas fa-user-circle"></i> Admin</span>
+          <p class="ucapan-msg">Selamat menempuh hidup baru, semoga menjadi keluarga yang sakinah, mawaddah, wa rahmah. Aamiin 🤲</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. PENUTUP ── -->
+  <section id="penutup" class="section section-closing">
+    <div class="floral floral-tl sm"></div>
+    <div class="floral floral-tr sm"></div>
+    <div class="floral floral-bl sm"></div>
+    <div class="floral floral-br sm"></div>
+    <div class="container">
+      <p class="closing-text" data-aos="fade-up">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+      </p>
+      <div class="gold-divider" data-aos="fade-up" data-aos-delay="50"></div>
+      <h2 class="closing-names" data-aos="zoom-in" data-aos-delay="100">
+        Risna Karima<br/>&amp;<br/>Muhammad Busairi
+      </h2>
+      <div class="closing-heart" data-aos="fade-up" data-aos-delay="150">
+        <span>──</span> <i class="fas fa-heart"></i> <span>──</span>
+      </div>
+    </div>
+  </section>
+
+</main><!-- /main-content -->
+
+<!-- ══════════════════════════════════════════
+     BOTTOM NAVBAR
+══════════════════════════════════════════ -->
+<nav id="bottom-nav" class="hidden">
+  <a href="#" onclick="return navTo('ayat')" class="nav-item" data-section="ayat">
+    <i class="fas fa-home"></i><span>Home</span>
+  </a>
+  <a href="#" onclick="return navTo('mempelai')" class="nav-item" data-section="mempelai">
+    <i class="fas fa-users"></i><span>Mempelai</span>
+  </a>
+  <a href="#" onclick="return navTo('acara')" class="nav-item" data-section="acara">
+    <i class="fas fa-calendar-alt"></i><span>Acara</span>
+  </a>
+  <a href="#" onclick="return navTo('lokasi')" class="nav-item" data-section="lokasi">
+    <i class="fas fa-map-marker-alt"></i><span>Lokasi</span>
+  </a>
+  <a href="#" onclick="return navTo('galeri')" class="nav-item" data-section="galeri">
+    <i class="fas fa-images"></i><span>Galeri</span>
+  </a>
+  <a href="#" onclick="return navTo('gift')" class="nav-item" data-section="gift">
+    <i class="fas fa-gift"></i><span>Gift</span>
+  </a>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     LIGHTBOX
+══════════════════════════════════════════ -->
+<div id="lightbox" class="lightbox hidden">
+  <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+  <img id="lb-img" src="" alt=""/>
+</div>
+
+<audio id="bg-music" src="assets/audio/wedding-song.mp3" loop preload="auto"></audio>
+<button id="btn-music" class="btn-music hidden">
+  <i class="fas fa-music"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
