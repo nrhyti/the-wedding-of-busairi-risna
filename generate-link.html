@@ -82,6 +82,11 @@
       color: white;
       text-decoration: none;
     }
+
+    .btn-ig {
+      background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45);
+      color: white;
+    }
     .btn-copy {
       background: #F3EDE0;
       color: #4A2E12;
@@ -140,6 +145,10 @@
         <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
       </a>
 
+      <button class="btn btn-ig" onclick="shareInstagram()">
+        <i class="fab fa-instagram"></i> Salin & Buka Instagram
+      </button>
+
       <p class="hint">
         Kalau nomor WA tidak diisi, tombol "Kirim via WhatsApp" akan membuka WhatsApp tanpa nomor tujuan — kamu bisa pilih kontaknya manual sebelum kirim.
       </p>
@@ -181,6 +190,23 @@
         setTimeout(() => { btn.innerHTML = original; }, 2000);
       });
     }
+
+    function shareInstagram() {
+  if (!generatedLink) {
+    alert('Buat link undangan terlebih dahulu ya.');
+    return;
+  }
+
+  const nama = document.getElementById('nama').value.trim();
+  const pesanIG = `Kepada Yth.\nBapak/Ibu/Saudara/i\n${nama}\n\nKami mengundang Bapak/Ibu/Saudara/i untuk hadir di pernikahan kami, Muhammad Busairi & Risna Karima.\n\nBerikut link undangan kami:\n${generatedLink}`;
+
+  navigator.clipboard.writeText(pesanIG).then(() => {
+    alert('Pesan sudah disalin! Buka chat tujuan di Instagram, lalu paste (tempel) pesannya.');
+    window.open('https://www.instagram.com/direct/inbox/', '_blank');
+  }).catch(() => {
+    alert('Gagal menyalin otomatis. Salin link secara manual ya.');
+  });
+}
   </script>
 
 </body>

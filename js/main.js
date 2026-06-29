@@ -33,7 +33,7 @@ AOS.init({
 });
 
 // ── Target wedding date/time (WITA = UTC+8) ──
-const WEDDING_DATE = new Date('2026-07-23T20:00:00+08:00');
+const WEDDING_DATE = new Date('2026-07-26T09:00:00+08:00');
 
 /* ════════════════════════════════════════════
    OPEN INVITATION
