@@ -76,6 +76,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; object-posit
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 0;
+  display: none;
 }
 .floral.sm { width: 90px; height: 90px; }
 
@@ -1014,6 +1015,21 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; object-posit
   .section-title { font-size: 1.7rem; }
   .acara-grid    { grid-template-columns: 1fr; }
 }
+
+.countdown-grid {
+    gap: 8px;
+    padding: 4px;
+  }
+  .cd-box {
+    width: 68px;
+    height: 68px;
+  }
+  .cd-num {
+    font-size: 1.3rem;
+  }
+  .cd-label {
+    font-size: 0.5rem;
+  }
 
 .btn-music {
   position: fixed;

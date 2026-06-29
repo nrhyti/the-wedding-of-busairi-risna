@@ -3,12 +3,33 @@
    Risna Karima & Muhammad Busairi
 ═══════════════════════════════════════════════ */
 
+// ── Ubah semua animasi jadi zoom-in yang lebih kerasa ──
+document.querySelectorAll('[data-aos]').forEach(el => {
+  el.setAttribute('data-aos', 'zoom-in');
+  el.setAttribute('data-aos-duration', '1400');
+});
+
+
+// ── Setup Supabase ──
+const SUPABASE_URL = 'https://bfdyeidknemgjgxqcgtl.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_1r8yVNIlGX09nd0dUmZZGQ_rz-N8cKf';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+ // ── Ambil nama tamu dari URL (?to=NamaTamu) ──
+function getGuestName() {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('to');
+  return name ? decodeURIComponent(name) : 'Tamu Undangan';
+}
+
+document.querySelector('.guest-name').textContent = getGuestName();
+
 // ── Init AOS ──
 AOS.init({
-  duration: 750,
-  easing: 'ease-out-cubic',
+  duration: 1400,
+  easing: 'ease-out-back',
   once: true,
-  offset: 50,
+  offset: 120,
 });
 
 // ── Target wedding date/time (WITA = UTC+8) ──
@@ -54,8 +75,10 @@ function openInvitation() {
     // Load saved ucapan
     loadUcapan();
 
-    // AOS refresh
-    setTimeout(() => AOS.refresh(), 300);
+// AOS refresh — tunggu lebih lama supaya layout sudah settle sepenuhnya
+  setTimeout(() => {
+    AOS.refreshHard();
+  }, 700);
 
     // Setup gallery lightbox
     setupGallery();
@@ -166,11 +189,9 @@ document.addEventListener('keydown', e => {
 });
 
 /* ════════════════════════════════════════════
-   UCAPAN & DOA — LocalStorage
+   UCAPAN & DOA — Supabase
 ════════════════════════════════════════════ */
-const STORAGE_KEY = 'wedding_ucapan_risna_busairi';
-
-function kirimUcapan() {
+async function kirimUcapan() {
   const nama  = document.getElementById('inp-nama').value.trim();
   const pesan = document.getElementById('inp-pesan').value.trim();
 
@@ -185,32 +206,34 @@ function kirimUcapan() {
     waktu: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' })
   };
 
-  // Save to localStorage
-  const list = getSavedUcapan();
-  list.unshift(item);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  // Save to Supabase
+  const { error } = await supabaseClient.from('ucapan').insert([item]);
 
-  // Add to DOM
+  if (error) {
+    console.error('Gagal kirim ucapan:', error);
+    alert('Maaf, ucapan gagal terkirim. Coba lagi ya.');
+    return;
+  }
+
   prependUcapanDOM(item);
 
-  // Reset inputs
   document.getElementById('inp-nama').value  = '';
   document.getElementById('inp-pesan').value = '';
 }
 
-function getSavedUcapan() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-  } catch {
-    return [];
+async function loadUcapan() {
+  const { data, error } = await supabaseClient
+    .from('ucapan')
+    .select('*')
+    .order('id', { ascending: false });
+
+  if (error) {
+    console.error('Gagal load ucapan:', error);
+    return;
   }
-}
 
-function loadUcapan() {
-  const list = getSavedUcapan();
-  list.forEach(item => appendUcapanDOM(item));
+  data.forEach(item => appendUcapanDOM(item));
 }
-
 function prependUcapanDOM(item) {
   const container = document.getElementById('ucapan-list');
   const el = buildUcapanEl(item);

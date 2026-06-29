@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator Link Undangan — Risna & Busairi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #FAF7F0 0%, #F3EDE0 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .box {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 24px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(154,117,48,0.15);
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    h1 {
+      font-size: 1.3rem;
+      color: #9A7530;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 0.8rem;
+      color: #6B4C2A;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: #4A2E12;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    input:focus { border-color: #C9A84C; }
+    .btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-generate {
+      background: linear-gradient(135deg, #E8C97A, #C9A84C, #9A7530);
+      color: white;
+    }
+    .btn-wa {
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+    }
+    .btn-copy {
+      background: #F3EDE0;
+      color: #4A2E12;
+      border: 1.5px solid rgba(201,168,76,0.3);
+    }
+    .result {
+      display: none;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed rgba(201,168,76,0.3);
+    }
+    .result.show { display: block; }
+    .link-preview {
+      background: #FAF7F0;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 0.75rem;
+      color: #6B4C2A;
+      word-break: break-all;
+      margin-bottom: 14px;
+    }
+    .hint {
+      font-size: 0.7rem;
+      color: #8B6340;
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>💌 Generator Link Undangan</h1>
+    <p class="subtitle">Risna Karima & Muhammad Busairi</p>
+
+    <label for="nama">Nama Tamu</label>
+    <input type="text" id="nama" placeholder="Contoh: Bapak Andi Saputra"/>
+
+    <label for="nowa">Nomor WhatsApp Tamu (opsional)</label>
+    <input type="tel" id="nowa" placeholder="Contoh: 628123456789"/>
+
+    <button class="btn btn-generate" onclick="generateLink()">
+      <i class="fas fa-link"></i> Buat Link Undangan
+    </button>
+
+    <div class="result" id="result">
+      <div class="link-preview" id="linkPreview"></div>
+
+      <button class="btn btn-copy" onclick="copyLink()">
+        <i class="fas fa-copy"></i> Salin Link
+      </button>
+
+      <a href="#" id="waBtn" target="_blank" class="btn btn-wa">
+        <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+      </a>
+
+      <p class="hint">
+        Kalau nomor WA tidak diisi, tombol "Kirim via WhatsApp" akan membuka WhatsApp tanpa nomor tujuan — kamu bisa pilih kontaknya manual sebelum kirim.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // GANTI URL INI sesuai alamat undangan kamu yang sudah live
+    const BASE_URL = 'https://nrhyti.github.io/the-wedding-of-busairi-risna/';
+
+    let generatedLink = '';
+
+    function generateLink() {
+      const nama = document.getElementById('nama').value.trim();
+      const nowa = document.getElementById('nowa').value.trim();
+
+      if (!nama) {
+        alert('Isi nama tamu terlebih dahulu ya.');
+        return;
+      }
+
+      generatedLink = `${BASE_URL}?to=${encodeURIComponent(nama)}`;
+
+      document.getElementById('linkPreview').textContent = generatedLink;
+      document.getElementById('result').classList.add('show');
+
+      const pesan = `Kepada Yth.\nBapak/Ibu/Saudara/i ${nama}\n_________________________\n\nAssalamualaikum Warahmatullahi Wabarakatuh\n\nTanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami.\n\nBerikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi :\n${generatedLink}\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\nWassalamualaikum Warahmatullahi Wabarakatuh\n\nTerima Kasih\n\nHormat kami,\nRisna & Busairi\n\nNB : Untuk hasil maksimal buka undangan di Google Chrome\n_________________________`;
+      const waNumber = nowa ? nowa.replace(/\D/g, '') : '';
+      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(pesan)}`;
+
+      document.getElementById('waBtn').href = waUrl;
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(generatedLink).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+        setTimeout(() => { btn.innerHTML = original; }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
